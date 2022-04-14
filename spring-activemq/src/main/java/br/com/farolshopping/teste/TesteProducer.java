@@ -16,7 +16,6 @@ import org.springframework.stereotype.Component;
 public class TesteProducer{
 	
 	public void testar() throws Exception {
-		System.out.println("sdads");
 		InitialContext context = new InitialContext();
 		ConnectionFactory factory = (ConnectionFactory) context.lookup("ConnectionFactory");
 		Connection connection = factory.createConnection();
@@ -26,12 +25,11 @@ public class TesteProducer{
 		Destination fila = (Destination)context.lookup("financeiro");
 		
 		MessageProducer producer = session.createProducer(fila);
-		Message message = session.createTextMessage("<pedido><id>123</id></pedido>");
 		
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 1000; i++) {
+			Message message = session.createTextMessage("<pedido><id>"+i+"</id></pedido>");
 			producer.send(message);
 		}
-		
 		session.close();
 		connection.close();
 		context.close();

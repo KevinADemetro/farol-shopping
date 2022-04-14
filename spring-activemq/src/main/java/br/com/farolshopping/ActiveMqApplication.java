@@ -25,8 +25,9 @@ public class ActiveMqApplication {
 	@Bean	
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) throws Exception{
 		return args -> {
-			testeProducer.testar();
+			System.out.println("asd");
 			testeConsumer.testar();
+			testeProducer.testar();
 		};
 	}
 }
