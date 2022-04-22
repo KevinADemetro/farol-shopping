@@ -1,2 +1,4 @@
 /.metadata/
 CursosFrontEnd/CursoFlexbox/.vscode/
+CursosFrontEnd/CursoWebpack/node_modules
+CursosFrontEnd/CursoWebpack/servidor-api/node_modules
