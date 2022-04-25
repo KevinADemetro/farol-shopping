@@ -13,6 +13,7 @@
         $npm install copy-webpack-plugin@version --save-dev
         $npm install css-loader@version --save-dev
         $npm install style-loader@version --save-dev
+        $npm install mini-css-extract-plugin@version --save-dev
 
     **Intalando bootstrap na aplicação**
         $npm install bootstrap@version --save
@@ -33,6 +34,7 @@
     A maneira de importar essas bibliotecas, é através do plugin css loader do webpack;
     Mas, esse plugin apenas importa o css para o js. É necessário mais um plugin para exportar esse css para a página que é style-loader;
     O css loader manda o css pra dentro do bundle e o style loader manda isso pra uma tag style no navegador;
+    Foi colocado um novo plugin pra na hora de buildar o projeto ele cria um arquivo css que vai ser carregado antes, o que evita FOUC;
 
 ## Coisas que vão ser útil mais tarde:
     o módulo **require('path');** do node devolve o caminho *absoluto* desde da instalação do OS;
