@@ -14,9 +14,13 @@
         $npm install css-loader@version --save-dev
         $npm install style-loader@version --save-dev
         $npm install mini-css-extract-plugin@version --save-dev
+        $npm install css-minimizer-webpack-plugin@version --save-dev
 
     **Intalando bootstrap na aplicação**
         $npm install bootstrap@version --save
+    
+    **Instalando dev server**
+        $npm install webpack-dev-server@version --save-dev
 
     **Rodar scripts com node**
         $npm run *nome do script no arquivo package.json*
@@ -41,3 +45,6 @@
     O **path** do **output** do **module.exports** no webpack.config.js, tem que absoluto;
     **--save-dev** quer em um npm intstall quer dizer que é uma biblioteca de desenvolvimento;
     **--save** quer dizer que essa biblioteca deve ser empacotada no build da aplicação, quer dizer que ela vai pro navegador ser interpretada;
+    '...' essa linha no webpack quer dizer que ele vai considerar as otimizações que foram implementadas, porém não vai deixar de aplicar as defaults. Exemplo: minimizer do css;
+
+    **$npm i -D webpack-cli @webpack-cli/serve** eu não sei o que isso faz, mas foi o que deu certo quando tava dando erro na hora de buildar o projeto com webpack dev server;
