@@ -10,11 +10,13 @@
 
     Comandos vue
         $npm install vue-resource@
+        $npm install vue-router@ --save
     
     ## Anotações 
         -g <- instala uma depêndencia node globalmente na máquina
         pra usar os valores do data no html, se usa o {{}}, mas para setar valores de atributos se usa o v-bind. Ex v-bind:src"atributo do data"
         : <- é uma abreviação do v-bind:
+        @ <- é uma abrviação do v-on:
 
 
     ## Erros solucionados
