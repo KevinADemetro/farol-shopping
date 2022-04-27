@@ -12,6 +12,10 @@
         $npm install vue-resource@
         $npm install vue-router@ --save
     
+    Módulos
+        Validação
+            $npm install vee-validate@2.0.0-beta.18 --save
+        
     ## Anotações 
         -g <- instala uma depêndencia node globalmente na máquina
         pra usar os valores do data no html, se usa o {{}}, mas para setar valores de atributos se usa o v-bind. Ex v-bind:src"atributo do data"
