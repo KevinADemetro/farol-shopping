@@ -17,4 +17,10 @@ export default class FotoService {
     apagar(id){
         return this._resource.delete({ id });
     }
+
+    buscar(id){
+        return this._resource
+            .get({ id })
+            .then(res => res.json());
+    }
 }
