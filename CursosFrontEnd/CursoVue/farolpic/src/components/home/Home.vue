@@ -49,25 +49,23 @@
         computed:{
             fotosComFiltro(){
                 if(this.filtro){
-                let exp = new RegExp(this.filtro.trim(), 'i');
-                return this.fotos.filter(foto => exp.test(foto.titulo));
+                    let exp = new RegExp(this.filtro.trim(), 'i');
+                    return this.fotos.filter(foto => exp.test(foto.titulo));
                 }else{
-                return this.fotos;
+                    return this.fotos;
                 }
             }
         },
         methods: {
 
             remover(foto){
-
                 this.service.apagar(foto._id)
                     .then(()=> {
                         let indice = this.fotos.indexOf(foto);
                         this.fotos.splice(indice, 1);
                         this.mensagem = "Foto removida com sucesso";
                     }, err => {
-                        console.log(err)
-                        this.mensagem = 'Não foi possível remover a foto';
+                        this.mensagem = err.message;
                     });
             }
 
@@ -77,7 +75,7 @@
             this.service = new FotoService(this.$resource);
             this.service
                 .listar()
-                .then(fotos => this.fotos = fotos, err => console.log(err));
+                .then(fotos => this.fotos = fotos, err => this.mensagem = err.message);
         }
     }
 </script>
