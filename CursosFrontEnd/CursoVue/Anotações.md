@@ -22,5 +22,4 @@
     ## Erros solucionados
         1. O arquivo C:\Users\DEV-02\AppData\Roaming\npm\vue.ps1 não pode ser carregado porque a execução de scripts foi desabilitada neste sistema.
         Solução:
-            Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-        2.
+            Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser 

@@ -1,5 +1,5 @@
 <template>
-    <img class="imagem-responsiva" :src="url" alt="titulo">
+    <img class="imagem-responsiva" :src="url" :alt="titulo">
 </template>
 <script>
 export default {
