@@ -3,6 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
 const webpack = require('webpack');
+var StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 module.exports = {
     entry: './app/src/js/app.js',
@@ -35,7 +38,14 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'style.css'
         }),
-        new webpack.optimize.ModuleConcatenationPlugin()
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        new StatsWriterPlugin({
+            transform: function(data, opts) {
+                let stats = opts.compiler.getStats().toJson({chunkModules: true});
+                return JSON.stringify(stats, null, 2); 
+            }
+        }),
+        new BundleAnalyzerPlugin()
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),

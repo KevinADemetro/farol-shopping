@@ -1,7 +1,5 @@
 package br.com.farolshopping;
 
-import java.text.Normalizer;
-
 import org.apache.camel.ProducerTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
