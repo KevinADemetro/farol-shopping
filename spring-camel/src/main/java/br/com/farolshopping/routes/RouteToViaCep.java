@@ -21,6 +21,15 @@ public class RouteToViaCep extends RouteBuilder{
 		.end();
 	}
 
+	private Processor prepararCorpoDaRequisicao() {
+		return new Processor() {					
+			@Override
+			public void process(Exchange exchange) throws Exception {
+				String cep = exchange.getMessage().getBody(String.class);
+				exchange.setProperty("cep", cep);
+			}
+		};
+	}
 	private Processor processarResultado() {
 		return new Processor() {				
 			@Override
@@ -33,15 +42,6 @@ public class RouteToViaCep extends RouteBuilder{
 		};
 	}
 
-	private Processor prepararCorpoDaRequisicao() {
-		return new Processor() {					
-			@Override
-			public void process(Exchange exchange) throws Exception {
-				String cep = exchange.getMessage().getBody(String.class);
-				exchange.setProperty("cep", cep);
-			}
-		};
-	}
 	
 	private JSONObject capturarResposta(Exchange exchange) {
 		return new JSONObject(exchange
